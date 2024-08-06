@@ -50,19 +50,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 
-class MainActivity : ComponentActivity() {
+class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreen()
+            MainScreen2()
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
-    val itemsList = List(10) { "List item - $it" }
+fun MainScreen2() {
+    val itemsList = List(20) { "List item - $it" }
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -79,7 +79,7 @@ fun MainScreen() {
         Scaffold(
             topBar = {
                 MediumTopAppBar({},
-                    modifier = Modifier.height(50.dp),
+                    modifier = Modifier.height(60.dp),
                     colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color.Black),
                     navigationIcon = {
                         Row(
@@ -133,14 +133,14 @@ fun MainScreen() {
                 ) {
                     FloatingActionButton(
                         onClick = {},
-                        containerColor = Color.Yellow,
+                        containerColor = Color(0xFF03DAC5),
                         modifier = Modifier.padding(bottom = 8.dp)
                     ) {
                         Icon(Icons.Filled.MyLocation, contentDescription = "My location")
                     }
                     FloatingActionButton(
                         onClick = {},
-                        containerColor = Color.Yellow
+                        containerColor = Color(0xFF03DAC5)
                     ) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,

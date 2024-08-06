@@ -21,7 +21,7 @@ import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.MyLocation
-import androidx.compose.material.icons.filled.NearMe
+import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
@@ -50,19 +50,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 
-class MainActivity : ComponentActivity() {
+class MainActivity3 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreen()
+            MainScreen3()
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
-    val itemsList = List(10) { "List item - $it" }
+fun MainScreen3() {
+    val itemsList = List(20) { "List item - $it" }
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -79,8 +79,8 @@ fun MainScreen() {
         Scaffold(
             topBar = {
                 MediumTopAppBar({},
-                    modifier = Modifier.height(50.dp),
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color.Black),
+                    modifier = Modifier.height(60.dp),
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color(0xFF6200EA)),
                     navigationIcon = {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
@@ -101,7 +101,7 @@ fun MainScreen() {
             },
             bottomBar = {
                 NavigationBar(
-                    containerColor = Color.Black
+                    containerColor = Color(0xFF6200EA)
                 ) {
                     NavigationBarItem(
                         icon = { Icon(Icons.Filled.Home, contentDescription = "Home", tint = Color.White) },
@@ -133,20 +133,20 @@ fun MainScreen() {
                 ) {
                     FloatingActionButton(
                         onClick = {},
-                        containerColor = Color.Yellow,
+                        containerColor = Color(0xFF03DAC5),
                         modifier = Modifier.padding(bottom = 8.dp)
                     ) {
                         Icon(Icons.Filled.MyLocation, contentDescription = "My location")
                     }
                     FloatingActionButton(
                         onClick = {},
-                        containerColor = Color.Yellow
+                        containerColor = Color(0xFF03DAC5)
                     ) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             modifier = Modifier.padding(horizontal = 8.dp)
                         ) {
-                            Icon(Icons.Filled.NearMe, contentDescription = "Navigate")
+                            Icon(Icons.Filled.Navigation, contentDescription = "Navigate")
                             Spacer(modifier = Modifier.width(4.dp))
                             Text(text = "Navigate")
                         }

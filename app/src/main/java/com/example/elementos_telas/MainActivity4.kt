@@ -17,7 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Create
+import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.MyLocation
@@ -50,19 +50,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 
-class MainActivity : ComponentActivity() {
+class MainActivity4 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreen()
+            MainScreen4()
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
-    val itemsList = List(10) { "List item - $it" }
+fun MainScreen4() {
+    val itemsList = List(5) { "List item - $it" }
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -79,7 +79,7 @@ fun MainScreen() {
         Scaffold(
             topBar = {
                 MediumTopAppBar({},
-                    modifier = Modifier.height(50.dp),
+                    modifier = Modifier.height(60.dp),
                     colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = Color.Black),
                     navigationIcon = {
                         Row(
@@ -110,7 +110,7 @@ fun MainScreen() {
                         onClick = {}
                     )
                     NavigationBarItem(
-                        icon = { Icon(Icons.Filled.Create, contentDescription = "Create", tint = Color.White) },
+                        icon = { Icon(Icons.Filled.AddCircle, contentDescription = "Create", tint = Color.White) },
                         label = { Text("Create", color = Color.White) },
                         selected = false,
                         onClick = {}
@@ -133,14 +133,14 @@ fun MainScreen() {
                 ) {
                     FloatingActionButton(
                         onClick = {},
-                        containerColor = Color.Yellow,
+                        containerColor = Color(0xFF03DAC5),
                         modifier = Modifier.padding(bottom = 8.dp)
                     ) {
                         Icon(Icons.Filled.MyLocation, contentDescription = "My location")
                     }
                     FloatingActionButton(
                         onClick = {},
-                        containerColor = Color.Yellow
+                        containerColor = Color(0xFF03DAC5)
                     ) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
